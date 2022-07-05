@@ -1,3 +1,9 @@
+#' Remove duplicated genes leaving leaving the one with the highest expression 
+#' average of those with the same name 
+#' @param exmat expression matrix with genes as rows and gene id and sample names
+#' as columns. Gene id columns must be names as gene_id
+#' @return expression matrix with no duplicated genes
+
 remove_duplicated_genes <- function(exmat){
   # Generate a column with the mean of each row after removing gene_id
   gene_means <- rowMeans(exmat %>% dplyr::select(-gene_id))

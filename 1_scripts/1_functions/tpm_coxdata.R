@@ -1,3 +1,10 @@
+#' Prepare tpm matrix for categorization and survival analysis. Add clinical data
+#' (survival time and status)
+#' @param tpm_matrix expression matrix with TPM normalization. Genes,
+#' survival time (os), survival status (censOS) and sample id (sample_id) as 
+#' cols. 
+#' @reutrn expression matrix with ordered genes and clinical data
+
 tpm_coxdata <- function(tpm_matrix) {
   tpm_matrix <- as.data.frame(t(tpm_matrix))
   tpm_matrix  <- rownames_to_column(tpm_matrix)

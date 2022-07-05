@@ -1,3 +1,9 @@
+#' Calculate optimal cutoff point and do survival analysis by Cox PH regression
+#' model with bonferroni p-value adjust
+#' @param coxdata matrix with expression values for genes (columns) and samples 
+#' (rows)
+#' @return matrix with genes and their p-values for survival analysis
+
 cox_regression <- function (coxdata) {
   genes <- names(coxdata)[4:ncol(coxdata)]
   opt_cut <- surv_cutpoint(coxdata, 

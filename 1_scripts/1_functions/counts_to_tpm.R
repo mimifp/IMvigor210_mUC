@@ -1,3 +1,8 @@
+#' Transform raw counts in trancripts per million (TPMs)
+#' @param counts matrix with raw counts for samples as cols and genes as rows
+#' @param featureLength matrix with name of gene and their length
+#' @return matrix with TPMs 
+
 counts_to_tpm <- function(counts, featureLength) {
   
   # Ensure valid arguments.
