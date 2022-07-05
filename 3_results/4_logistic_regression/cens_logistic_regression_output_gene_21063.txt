@@ -1,0 +1,69 @@
+[1] "Results for gene gene_21063"
+[1] "DC model"
+
+Call:
+glm(formula = dc ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9925  -0.9695  -0.9695   1.4006   1.4006  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept) -0.45199    0.34188  -1.322    0.186
+levelhigh   -0.05884    0.36133  -0.163    0.871
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 460.96  on 347  degrees of freedom
+Residual deviance: 460.93  on 346  degrees of freedom
+AIC: 464.93
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting dc : DC vs NDC 
+ 
+                   OR(95%CI)         P(Wald's test) P(LR-test)
+level: high vs low 0.94 (0.46,1.91)  0.871          0.871     
+                                                              
+Log-likelihood = -230.4647
+No. of observations = 348
+AIC value = 464.9294
+
+[1] "Response model"
+
+Call:
+glm(formula = response ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6596  -0.6596  -0.6596  -0.6576   1.8098  
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -1.421386   0.421117  -3.375 0.000737 ***
+levelhigh    0.006807   0.444654   0.015 0.987787    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 343.8  on 347  degrees of freedom
+Residual deviance: 343.8  on 346  degrees of freedom
+AIC: 347.8
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting response : R vs NR 
+ 
+                   OR(95%CI)               P(Wald's test) P(LR-test)
+level: high vs low 1.0068 (0.4212,2.4068)  0.988          0.988     
+                                                                    
+Log-likelihood = -171.8987
+No. of observations = 348
+AIC value = 347.7975
+

@@ -1,0 +1,968 @@
+[1] "ANALYZING Bcells"
+[1] "Mann-Whitney U Wilcoxon test for gene_1374"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13447, p-value = 0.6829
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_17266"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5111, p-value = 0.5167
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_20068"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 15613, p-value = 0.6036
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21063"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5900, p-value = 0.6199
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21270"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13157, p-value = 0.9393
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24498"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9552, p-value = 0.6139
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24954"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12072, p-value = 0.08699
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_2527"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9377, p-value = 0.3877
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_27685"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11022, p-value = 0.3096
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_29320"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13745, p-value = 0.5467
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4602"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6698, p-value = 0.3692
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4627"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14253, p-value = 0.8886
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4679"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11071, p-value = 0.9836
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5294"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13946, p-value = 0.8055
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5834"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12621, p-value = 0.3075
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "ANALYZING CAFs"
+[1] "Mann-Whitney U Wilcoxon test for gene_1374"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11644, p-value = 0.09761
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_17266"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6541, p-value = 0.05967
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_20068"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13822, p-value = 0.1648
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21063"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6573, p-value = 0.09422
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21270"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12364, p-value = 0.4054
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24498"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10374, p-value = 0.565
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24954"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10703, p-value = 0.9833
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_2527"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9198.5, p-value = 0.2725
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_27685"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11362, p-value = 0.1454
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_29320"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13069, p-value = 0.8673
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4602"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6265, p-value = 0.8614
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4627"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13580, p-value = 0.5473
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4679"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9965.5, p-value = 0.1624
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5294"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14058, p-value = 0.9023
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5834"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10773, p-value = 0.2258
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "ANALYZING CD4_Tcells"
+[1] "Mann-Whitney U Wilcoxon test for gene_1374"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12235, p-value = 0.3274
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_17266"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5620, p-value = 0.8014
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_20068"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14890, p-value = 0.8022
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21063"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5397, p-value = 0.7022
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21270"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12328, p-value = 0.3828
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24498"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10007, p-value = 0.9261
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24954"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12165, p-value = 0.06736
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_2527"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9574, p-value = 0.5446
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_27685"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10154, p-value = 0.9143
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_29320"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12257, p-value = 0.2743
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4602"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6603, p-value = 0.4598
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4627"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 15565, p-value = 0.1124
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4679"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11203, p-value = 0.8866
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5294"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14115, p-value = 0.9521
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5834"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11203, p-value = 0.4891
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "ANALYZING CD8_Tcells"
+[1] "Mann-Whitney U Wilcoxon test for gene_1374"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13753, p-value = 0.4477
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_17266"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5614, p-value = 0.8096
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_20068"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 16382, p-value = 0.1806
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21063"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5851, p-value = 0.6816
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21270"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14043, p-value = 0.275
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24498"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9475, p-value = 0.5447
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24954"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 8732, p-value = 0.01184
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_2527"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9833, p-value = 0.7895
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_27685"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9313, p-value = 0.2312
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_29320"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13999, p-value = 0.3721
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4602"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5730, p-value = 0.4731
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4627"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13780, p-value = 0.7035
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4679"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10633, p-value = 0.5714
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5294"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13865, p-value = 0.7373
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5834"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11926, p-value = 0.8567
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "ANALYZING Endothelial"
+[1] "Mann-Whitney U Wilcoxon test for gene_1374"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13809, p-value = 0.4103
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_17266"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5738, p-value = 0.6451
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_20068"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 15857, p-value = 0.4358
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21063"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5868, p-value = 0.6599
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21270"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13673, p-value = 0.5044
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24498"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9937, p-value = 0.9995
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24954"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10478, p-value = 0.7597
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_2527"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9903, p-value = 0.8608
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_27685"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10849, p-value = 0.4285
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_29320"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13213, p-value = 0.9977
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4602"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5726, p-value = 0.4689
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4627"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14511, p-value = 0.671
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4679"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10284, p-value = 0.3171
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5294"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14230, p-value = 0.9477
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5834"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12534, p-value = 0.3601
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "ANALYZING Macrophages"
+[1] "Mann-Whitney U Wilcoxon test for gene_1374"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13736, p-value = 0.4594
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_17266"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5079, p-value = 0.4807
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_20068"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14070, p-value = 0.2607
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21063"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 5435, p-value = 0.7521
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21270"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12404, p-value = 0.4321
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24498"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9894, p-value = 0.9565
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24954"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12017, p-value = 0.1006
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_2527"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10828, p-value = 0.3012
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_27685"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10409, p-value = 0.8246
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_29320"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12545, p-value = 0.4444
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4602"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6737, p-value = 0.3355
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4627"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14483, p-value = 0.6937
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4679"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10586, p-value = 0.5323
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5294"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14111, p-value = 0.9486
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5834"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12509, p-value = 0.3761
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "ANALYZING NKcells"
+[1] "Mann-Whitney U Wilcoxon test for gene_1374"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13328, p-value = 0.7855
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_17266"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6029, p-value = 0.329
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_20068"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 15719, p-value = 0.5272
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21063"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6004, p-value = 0.4978
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21270"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12111, p-value = 0.2621
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24498"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10140, p-value = 0.7889
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24954"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11412, p-value = 0.3812
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_2527"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9077, p-value = 0.209
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_27685"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10731, p-value = 0.5229
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_29320"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11860, p-value = 0.1221
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4602"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6342, p-value = 0.7617
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4627"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14272, p-value = 0.872
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4679"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11491, p-value = 0.6162
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5294"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 15077, p-value = 0.318
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5834"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12042, p-value = 0.7484
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "ANALYZING otherCells"
+[1] "Mann-Whitney U Wilcoxon test for gene_1374"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14194, p-value = 0.206
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_17266"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 4117, p-value = 0.01598
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_20068"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 16052, p-value = 0.3235
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21063"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 4223, p-value = 0.01484
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_21270"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13650, p-value = 0.5214
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24498"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9479, p-value = 0.5482
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_24954"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 11653, p-value = 0.2376
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_2527"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 10980, p-value = 0.2176
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_27685"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 9739, p-value = 0.5187
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_29320"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13817, p-value = 0.4934
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4602"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 6490, p-value = 0.582
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4627"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14897, p-value = 0.395
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_4679"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 12659, p-value = 0.05052
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5294"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 14240, p-value = 0.939
+alternative hypothesis: true location shift is not equal to 0
+
+[1] "Mann-Whitney U Wilcoxon test for gene_5834"
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  cell_fraction by level
+W = 13074, p-value = 0.1169
+alternative hypothesis: true location shift is not equal to 0
+

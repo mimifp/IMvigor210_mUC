@@ -1,0 +1,71 @@
+[1] "Results for gene gene_20068"
+[1] "DC model"
+
+Call:
+glm(formula = dc ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9756  -0.9756  -0.9684   1.3936   1.4019  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept) -0.49508    0.15858  -3.122   0.0018 **
+levelhigh   -0.01873    0.22137  -0.085   0.9326   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 460.96  on 347  degrees of freedom
+Residual deviance: 460.95  on 346  degrees of freedom
+AIC: 464.95
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting dc : DC vs NDC 
+ 
+                   OR(95%CI)         P(Wald's test) P(LR-test)
+level: high vs low 0.98 (0.64,1.51)  0.933          0.933     
+                                                              
+Log-likelihood = -230.4743
+No. of observations = 348
+AIC value = 464.9486
+
+[1] "Response model"
+
+Call:
+glm(formula = response ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6703  -0.6703  -0.6491  -0.6491   1.8227  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -1.37891    0.19188  -7.186 6.66e-13 ***
+levelhigh   -0.07146    0.27042  -0.264    0.792    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 343.80  on 347  degrees of freedom
+Residual deviance: 343.73  on 346  degrees of freedom
+AIC: 347.73
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting response : R vs NR 
+ 
+                   OR(95%CI)         P(Wald's test) P(LR-test)
+level: high vs low 0.93 (0.55,1.58)  0.792          0.792     
+                                                              
+Log-likelihood = -171.8639
+No. of observations = 348
+AIC value = 347.7279
+

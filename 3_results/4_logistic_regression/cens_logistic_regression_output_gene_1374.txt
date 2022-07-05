@@ -1,0 +1,71 @@
+[1] "Results for gene_1374"
+[1] "DCR model"
+
+Call:
+glm(formula = dcr ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.0025  -1.0025  -0.9056   1.3631   1.4762  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -0.6795     0.2018  -3.367 0.000759 ***
+levelhigh     0.2530     0.2415   1.048 0.294713    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 460.96  on 347  degrees of freedom
+Residual deviance: 459.85  on 346  degrees of freedom
+AIC: 463.85
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting dcr : DC vs NDC 
+ 
+                   OR(95%CI)        P(Wald's test) P(LR-test)
+level: high vs low 1.29 (0.8 - 2.07)  0.295          0.292     
+                                                             
+Log-likelihood = -229.9229
+No. of observations = 348
+AIC value = 463.8459
+
+[1] "ORR model"
+
+Call:
+glm(formula = orr ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6633  -0.6633  -0.6633  -0.6509   1.8199  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -1.44411    0.24260  -5.953 2.64e-09 ***
+levelhigh    0.04199    0.29218   0.144    0.886    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 343.80  on 347  degrees of freedom
+Residual deviance: 343.78  on 346  degrees of freedom
+AIC: 347.78
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting orr : R vs NR 
+ 
+                   OR(95%CI)         P(Wald's test) P(LR-test)
+level: high vs low 1.04 (0.59,1.85)  0.886          0.886     
+                                                              
+Log-likelihood = -171.8885
+No. of observations = 348
+AIC value = 347.777
+

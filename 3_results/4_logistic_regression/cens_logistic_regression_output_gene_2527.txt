@@ -1,0 +1,71 @@
+[1] "Results for gene gene_2527"
+[1] "DC model"
+
+Call:
+glm(formula = dc ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9868  -0.9868  -0.9157   1.3808   1.4640  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)  -0.6523     0.2466  -2.645  0.00817 **
+levelhigh     0.1859     0.2760   0.673  0.50070   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 460.96  on 347  degrees of freedom
+Residual deviance: 460.50  on 346  degrees of freedom
+AIC: 464.5
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting dc : DC vs NDC 
+ 
+                   OR(95%CI)       P(Wald's test) P(LR-test)
+level: high vs low 1.2 (0.7,2.07)  0.501          0.498     
+                                                            
+Log-likelihood = -230.2486
+No. of observations = 348
+AIC value = 464.4972
+
+[1] "Response model"
+
+Call:
+glm(formula = response ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6783  -0.6544  -0.6544  -0.6544   1.8147  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -1.35239    0.28967  -4.669 3.03e-06 ***
+levelhigh   -0.07999    0.32754  -0.244    0.807    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 343.80  on 347  degrees of freedom
+Residual deviance: 343.74  on 346  degrees of freedom
+AIC: 347.74
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting response : R vs NR 
+ 
+                   OR(95%CI)         P(Wald's test) P(LR-test)
+level: high vs low 0.92 (0.49,1.75)  0.807          0.808     
+                                                              
+Log-likelihood = -171.8693
+No. of observations = 348
+AIC value = 347.7386
+

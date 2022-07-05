@@ -1,0 +1,170 @@
+[1] "results_gene_1374"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 2.3557, df = 1, p-value = 0.1248
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 4.3426, df = 1, p-value = 0.03717
+
+
+[1] "results_gene_17266"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 5.6322, df = 1, p-value = 0.01763
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 2.9319, df = 1, p-value = 0.08684
+
+
+[1] "results_gene_21063"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 0.062725, df = 1, p-value = 0.8022
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 0.16007, df = 1, p-value = 0.6891
+
+
+[1] "results_gene_21270"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 0.90503, df = 1, p-value = 0.3414
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 1.2799, df = 1, p-value = 0.2579
+
+
+[1] "results_gene_24954"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 5.0515, df = 1, p-value = 0.0246
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 3.5741, df = 1, p-value = 0.05869
+
+
+[1] "results_gene_27685"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 10.946, df = 1, p-value = 0.0009381
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 13.82, df = 1, p-value = 0.0002012
+
+
+[1] "results_gene_4602"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 4.1465, df = 1, p-value = 0.04172
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 5.8057, df = 1, p-value = 0.01597
+
+
+[1] "results_gene_4627"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 7.5142, df = 1, p-value = 0.006121
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 10.868, df = 1, p-value = 0.0009785
+
+
+[1] "results_gene_4679"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 2.5514, df = 1, p-value = 0.1102
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 0.52, df = 1, p-value = 0.4708
+
+
+[1] "results_gene_5834"
+[[1]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_dc
+X-squared = 0.67142, df = 1, p-value = 0.4126
+
+
+[[2]]
+
+	Pearson's Chi-squared test with Yates' continuity correction
+
+data:  data_gene_res
+X-squared = 1.4326, df = 1, p-value = 0.2313
+
+

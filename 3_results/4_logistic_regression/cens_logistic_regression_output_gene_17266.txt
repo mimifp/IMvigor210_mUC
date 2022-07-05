@@ -1,0 +1,69 @@
+[1] "Results for gene gene_17266"
+[1] "DC model"
+
+Call:
+glm(formula = dc ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9728  -0.9728  -0.9728   1.3968   1.4074  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept) -0.52609    0.34983  -1.504    0.133
+levelhigh    0.02378    0.36876   0.064    0.949
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 460.96  on 347  degrees of freedom
+Residual deviance: 460.95  on 346  degrees of freedom
+AIC: 464.95
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting dc : DC vs NDC 
+ 
+                   OR(95%CI)        P(Wald's test) P(LR-test)
+level: high vs low 1.02 (0.5,2.11)  0.949          0.949     
+                                                             
+Log-likelihood = -230.4758
+No. of observations = 348
+AIC value = 464.9516
+
+[1] "Response model"
+
+Call:
+glm(formula = response ~ level, family = binomial(link = "logit"), 
+    data = data_gene)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.7204  -0.6524  -0.6524  -0.6524   1.8176  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)  -1.2164     0.4025  -3.022  0.00251 **
+levelhigh    -0.2226     0.4274  -0.521  0.60239   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 343.80  on 347  degrees of freedom
+Residual deviance: 343.53  on 346  degrees of freedom
+AIC: 347.53
+
+Number of Fisher Scoring iterations: 4
+
+
+Logistic regression predicting response : R vs NR 
+ 
+                   OR(95%CI)        P(Wald's test) P(LR-test)
+level: high vs low 0.8 (0.35,1.85)  0.602          0.608     
+                                                             
+Log-likelihood = -171.7674
+No. of observations = 348
+AIC value = 347.5349
+
