@@ -129,6 +129,7 @@ BiocManager::install("clusterProfiler")
 
  The DEseq2 package was used to perform the differential expression of the data and to obtain the logFC as a measure of the effect, which is the measure used by clusterProfiler to perform the GSEA. Significant GO terms and KEGG pathways were obtained for each of the genes of interest. The necessary code can be found in the script [7_gsea.R](1_scripts/2_pipeline/7_gsea.R).
 
- The analysis of cancer hallmarks was performed using the [GSEA v4.2.3](http://www.gsea-msigdb.org/gsea/login.jsp) application. Three main files are required: [exp_mat.txt](2_data/3_hallmark_geneset/exp_mat.txt), [h.all.v7.5.1.symbols.gmt](2_data/3_hallmark_geneset/h.all.v7.5.1.symbols.gmt) and matrix in .cls format indicating the samples with high or low phenotype for each of the genes. A .cls file is needed for each gene of interest.
+ The analysis of cancer hallmarks was performed using the [GSEA v4.2.3](http://www.gsea-msigdb.org/gsea/login.jsp) application. Three main files are required: [exp_mat.txt](2_data/3_hallmark_geneset/exp_mat.txt), [h.all.v7.5.1.symbols.gmt](2_data/3_hallmark_geneset/h.all.v7.5.1.symbols.gmt) and matrix in *.cls* format indicating the samples with high or low phenotype for each of the genes. A *.cls* file is needed for each gene of interest.
 
- #### H.
+ #### H. Multivariant Analysis
+In order to obtain a prognostic model of survival with the smallest possible number of genes, several multivariate models were constructed. First, three models were optimized for the Cox PH method (forward, backward and stepwise). Second, a Cox CV model with 10 folds was optimized. Finally, we applied Random Survival Forest (RFS) model. Details of the execution can be found in the script [8_multivariant.R](1_scripts/2_pipeline/8_multivariant.R). The function [flattenCorrMatrix.R](1_scripts/1_functions/flattenCorrMatrix.R) is necessary to calculate matrix of Pearson Correlation.

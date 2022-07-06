@@ -15,7 +15,7 @@ library(gtable)
 library(grid)
 
 # Load functions
-source("/Users/mimiferreiro/Desktop/Lab/2_urothelial/1_scripts/1_functions/flattenCorrMatrix.R")
+source("../../1_scripts/1_functions/flattenCorrMatrix.R")
 
 # Load data
 df <- read.csv("../../3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv")
