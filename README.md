@@ -115,7 +115,7 @@ For cell deconvolution it is necessary to install the [EPIC v1.1 package](https:
 install.packages("devtools")
 devtools::install_github("GfellerLab/EPIC", build_vignettes=TRUE)
 ```
-To run this tool the data must be uncensored, so in the script [6_deconvolution.R](1_scripts/2_pipeline/6_deconvolution.R) the execution details appear but the initial uncensored expression matrix is not provided. An analysis of CD8 T-cell exhaustion markers was also performed.
+To run this tool the data must be uncensored, so in the script [6_deconvolution.R](1_scripts/2_pipeline/6_deconvolution.R) the execution details appear but the initial uncensored expression matrix is not provided. An analysis of CD8+ T-cell exhaustion markers was also performed.
 
 #### G. Gene Set Enrichment Analysis (GSEA) and Hallmarks of Cancer Analysis
 The clusterProfiler package was used to carry out the GSEA.
@@ -127,4 +127,8 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install("clusterProfiler")
 ```
 
- The DEseq2 package was used to perform the differential expression of the data and to obtain the logFC as a measure of the effect, which is the measure used by clusterProfiler to perform the GSEA.
+ The DEseq2 package was used to perform the differential expression of the data and to obtain the logFC as a measure of the effect, which is the measure used by clusterProfiler to perform the GSEA. Significant GO terms and KEGG pathways were obtained for each of the genes of interest. The necessary code can be found in the script [7_gsea.R](1_scripts/2_pipeline/7_gsea.R).
+
+ The analysis of cancer hallmarks was performed using the [GSEA v4.2.3](http://www.gsea-msigdb.org/gsea/login.jsp) application. Three main files are required: [exp_mat.txt](2_data/3_hallmark_geneset/exp_mat.txt), [h.all.v7.5.1.symbols.gmt](2_data/3_hallmark_geneset/h.all.v7.5.1.symbols.gmt) and matrix in .cls format indicating the samples with high or low phenotype for each of the genes. A .cls file is needed for each gene of interest.
+
+ #### H.
