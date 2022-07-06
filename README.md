@@ -62,7 +62,13 @@ install.packages("IMvigor210CoreBiologies_1.0.0.tar.gz", repos=NULL)
 library(IMvigor210CoreBiologies)
 ```
 
-You can obtain matrix expression through `counts(cds)` object. Feature characterize data its saved in `fData` and phenotype (clinical) data its in `pData`. These three datasets are listed on the github as [exmat_censored_IMvigor210.csv](2_data/1_IMvigor210/exmat_censored_IMvigor210.csv) (expression matrix), [fData_IMvigor210.csv](2_data/1_IMvigor210/fData_IMvigor210.csv) (feature data) and [pData_IMvigor210.csv](2_data/1_IMvigor210/pData_IMvigor210.csv) (phenotype data). The code used is in the script [1_download_data.R](1_scripts/2_pipeline/1_download_data.R).
+You can obtain matrix expression through `counts(cds)` object. Feature characterize data its saved in `fData` and phenotype (clinical) data its in `pData`. These three datasets are listed on the github as [exmat_censored_IMvigor210.csv](2_data/1_IMvigor210/exmat_censored_IMvigor210.csv) (expression matrix), [fData_IMvigor210.csv](2_data/1_IMvigor210/fData_IMvigor210.csv) (feature data) and [pData_IMvigor210.csv](2_data/1_IMvigor210/pData_IMvigor210.csv) (phenotype data).
+
+The code used is in the script [1_download_data.R](1_scripts/2_pipeline/1_download_data.R). The required functions are [remove_duplicated_genes.R](1_scripts/1_functions/remove_duplicated_genes.R) and biocLite.R which is loaded from the Bioconductor website as follows:
+
+```
+source("http://bioconductor.org/biocLite.R")
+```
 
 #### B. Preprocess gene expression data
 Data quality analysis and normalization to TPMs is performed. In addition, three filters are applied on the data:
@@ -71,3 +77,10 @@ Data quality analysis and normalization to TPMs is performed. In addition, three
 * Drop genes with s.d <= 1 and include only genes with log(TPM+1) >= 2 in at least 10% of samples
 
 The last two filters are influential. In our analysis we use the second one (SD), however, the code necessary to apply the other one (IQR) is attached. The necessary code is in the script [2_preprocess_data.R](1_scripts/2_pipeline/2_preprocess_data.R).
+
+#### C. Survival analysis
+First step is preparing clincal data and Cox regression data. We merge clinical data with matrix obtained after apply each filter. For each gene (columns) in each sample (rows) we have a expression value, an overall survival value (os) and patient status in the moment of data collection (censOS; 1 = dead, 0 = alive). For comparisson purposes, we define two clinically-relevant endpoints: disease control (DC) (CR+PR+SD) vs no disease control (NDC) (PD+NE), and response (R) (CR+PR) vs no response (NR) (SD+PD+NE). In this step, in addition to a survival analysis to obtain potential biomarkers, statistical tests (chi-square and logistic regression) are performed to observe whether there are differences between the two clinically-relevant endpoints previously defined.
+
+The necessary code is attached in the script [3_survival_analysis.R](1_scripts/2_pipeline/3_survival_analysis.R) to be applied on the two filters that were catalogued as excluding in the previous step (SD and IQR). Functions required: [tpm_coxdata.R](1_scripts/1_functions/tpm_coxdata.R), [cox_regression.R](1_scripts/1_functions/cox_regression.R) and [categorized_cox.R](1_scripts/1_functions/categorized_cox.R).
+
+#### D. Kaplan-Meier plots

@@ -2,13 +2,6 @@
 
 # This workflow was performed in R 4.2.0
 
-# Install packages
-#install.packages(c("tidyverse", "dplyr", "survminer", "survival", "ggplot2", "magrittr", "RColorBrewer"))
-#if (!require("BiocManager", quietly = TRUE))
-#  install.packages("BiocManager")
-#BiocManager::install()
-#BiocManager::install(c("RegParallel", "genefilter"))
-
 # Load packages
 library(tidyverse)
 library(dplyr)
@@ -20,12 +13,6 @@ library(hrbrthemes)
 library(magrittr)
 library(RColorBrewer)
 library(ggpubr)
-
-# Load functions
-source("/Users/mimiferreiro/Desktop/Lab/2_urothelial/1_scripts/1_functions/counts_to_tpm.R")
-source("/Users/mimiferreiro/Desktop/Lab/2_urothelial/1_scripts/1_functions/tpm_coxdata.R")
-source("/Users/mimiferreiro/Desktop/Lab/2_urothelial/1_scripts/1_functions/cox_regression.R")
-source("/Users/mimiferreiro/Desktop/Lab/2_urothelial/1_scripts/1_functions/categorized_cox.R")
 
 # Change working directory
 setwd("../../2_data/1_IMvigor210")
