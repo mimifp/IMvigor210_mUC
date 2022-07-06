@@ -79,8 +79,42 @@ Data quality analysis and normalization to TPMs is performed. In addition, three
 The last two filters are influential. In our analysis we use the second one (SD), however, the code necessary to apply the other one (IQR) is attached. The necessary code is in the script [2_preprocess_data.R](1_scripts/2_pipeline/2_preprocess_data.R).
 
 #### C. Survival analysis
-First step is preparing clincal data and Cox regression data. We merge clinical data with matrix obtained after apply each filter. For each gene (columns) in each sample (rows) we have a expression value, an overall survival value (os) and patient status in the moment of data collection (censOS; 1 = dead, 0 = alive). For comparisson purposes, we define two clinically-relevant endpoints: disease control (DC) (CR+PR+SD) vs no disease control (NDC) (PD+NE), and response (R) (CR+PR) vs no response (NR) (SD+PD+NE). In this step, in addition to a survival analysis to obtain potential biomarkers, statistical tests (chi-square and logistic regression) are performed to observe whether there are differences between the two clinically-relevant endpoints previously defined.
+First steps are merge clincal data and Cox regression data and calculate optimal cutpoint to categorize gene expression in *high* and *low* levels. For all comparisions *low* level is used as reference. We merge clinical data with matrix obtained after apply each filter. For each gene (columns) in each sample (rows) we have a expression value, an overall survival value (os) and patient status in the moment of data collection (censOS; 1 = dead, 0 = alive). For comparisson purposes, we define two clinically-relevant endpoints: disease control (DC) (CR+PR+SD) vs no disease control (NDC) (PD+NE), and response (R) (CR+PR) vs no response (NR) (SD+PD+NE).
+
+In this step, in addition to a survival analysis to obtain potential biomarkers, statistical tests (chi-square and logistic regression) are performed to observe whether there are differences between the two clinically-relevant endpoints previously defined.
 
 The necessary code is attached in the script [3_survival_analysis.R](1_scripts/2_pipeline/3_survival_analysis.R) to be applied on the two filters that were catalogued as excluding in the previous step (SD and IQR). Functions required: [tpm_coxdata.R](1_scripts/1_functions/tpm_coxdata.R), [cox_regression.R](1_scripts/1_functions/cox_regression.R) and [categorized_cox.R](1_scripts/1_functions/categorized_cox.R).
 
 #### D. Kaplan-Meier plots
+The code necessary to obtain the Kaplan-Meier survival curves for each of the potential biomarkers is in the following script [4_kaplan_meier_plots.R](1_scripts/2_pipeline/4_kaplan_meier_plots.R).
+
+#### E. Download and analyze TCGA BLCA dataset
+To download the expression, phenotype and feature data from TCGA-BLCA, run the following code in terminal, from the folder where you want to store them. Expression data is normalized with Fragments Per Kilobase of transcript per Million mapped reads (FPKMs).
+
+```
+wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-BLCA.htseq_fpkm.tsv.gz
+wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-BLCA.survival.tsv
+wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-BLCA.GDC_phenotype.tsv.gz
+```
+
+Unzipping:
+
+```
+gzip -d TCGA-BLCA.htseq_fpkm.tsv.gz
+gzip -d TCGA-BLCA.GDC_phenotype.tsv.gz
+```
+
+The data provided for this analysis have been preprocessed in order to upload them to the repository already censored. In this preprocessing, the necessary phenotypic data were prepared and the expression matrix was filtered, so that we were left with only the data related to potential biomarker genes. In addition, the variable relating to survival time (os) was converted from days to years. The result is a matrix with the same characteristics as the one used for the initial survival analysis, but with only 15 genes.
+
+The code necessary to apply Cox PH regression and plot Kaplan-Meier survival curves on TCGA-BLCA data is contained in the script [5_TCGA_BLCA_analysis.R](1_scripts/2_pipeline/5_TCGA_BLCA_analysis.R). The [categorized_cox.R](1_scripts/1_functions/categorized_cox.R) function is necessary.
+
+#### F. Deconvolution with EPIC
+For cell deconvolution it is necessary to install the [EPIC v1.1 package](https://github.com/GfellerLab/EPIC) from GitHub, it was done through the [devtools v2.4.3 package](https://cran.r-project.org/web/packages/devtools/index.html).
+
+```
+#install.packages("devtools")
+#devtools::install_github("GfellerLab/EPIC", build_vignettes=TRUE)
+```
+To run this tool the data must be uncensored, so in the script [6_deconvolution.R](1_scripts/2_pipeline/6_deconvolution.R) the execution details appear but the initial uncensored expression matrix is not provided. An analysis of CD8 T-cell exhaustion markers was also performed.
+
+#### G. 

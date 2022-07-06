@@ -6,15 +6,6 @@ path <- ("../../2_data/2_TCGA_BLCA")
 mkdir(path)
 setwd(path)
 
-# Download TCGA-BLCA data (in terminal)
-#wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-BLCA.htseq_fpkm.tsv.gz
-#wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-BLCA.survival.tsv
-#wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-BLCA.GDC_phenotype.tsv.gz
-
-# Uncompress files (in terminal)
-#gzip -d TCGA-BLCA.htseq_fpkm.tsv.gz
-#gzip -d TCGA-BLCA.GDC_phenotype.tsv.gz
-
 # Load functions
 source("../../1_scripts/1_functions/categorized_cox.R")
 

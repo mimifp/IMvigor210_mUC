@@ -87,11 +87,11 @@ for (type in cell_types){
           plot.title = element_text(hjust = 0.5)) 
   print(plot)
   # Check normality of variables
-  #hist(df$cell_fraction, main = type, xlab = "Cell fraction", col = "#F28E2B")
+  hist(df$cell_fraction, main = type, xlab = "Cell fraction", col = "#F28E2B")
   # Lilliefors Normality Test (Kolmogorov-Smirnov)
-  #test <- lillie.test(df$cell_fraction)
-  #print(paste0("Normality test for ", type))
-  #print(test)
+  test <- lillie.test(df$cell_fraction)
+  print(paste0("Normality test for ", type))
+  print(test)
 }
 
 #### 3. DISTRIBUTION STATISTICS ####
