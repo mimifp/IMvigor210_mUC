@@ -46,6 +46,7 @@ This repository contains all the scripts and data necessary to carry out this an
 ### 2. HOW TO
 Two different versions of R are required to run the entire pipeline, due to incompatibility of the DEseq package with the most recent versions of the software. The required versions can be installed with the [RSwitch](https://rud.is/rswitch/) program. During the development of this project, R v3.3.3 and R v4.2.0 for in macOS Monterrey 12.3 were used.
 
+#### Download Imvigor210 Core Biologies data
 To download and install [IMvigor210 Core Biologies package v1.0.0](http://research-pub.gene.com/IMvigor210CoreBiologies/packageVersions/), R 3.3.3 version is required.
 
 ```
