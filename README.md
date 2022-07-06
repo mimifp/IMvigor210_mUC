@@ -112,9 +112,19 @@ The code necessary to apply Cox PH regression and plot Kaplan-Meier survival cur
 For cell deconvolution it is necessary to install the [EPIC v1.1 package](https://github.com/GfellerLab/EPIC) from GitHub, it was done through the [devtools v2.4.3 package](https://cran.r-project.org/web/packages/devtools/index.html).
 
 ```
-#install.packages("devtools")
-#devtools::install_github("GfellerLab/EPIC", build_vignettes=TRUE)
+install.packages("devtools")
+devtools::install_github("GfellerLab/EPIC", build_vignettes=TRUE)
 ```
 To run this tool the data must be uncensored, so in the script [6_deconvolution.R](1_scripts/2_pipeline/6_deconvolution.R) the execution details appear but the initial uncensored expression matrix is not provided. An analysis of CD8 T-cell exhaustion markers was also performed.
 
-#### G. 
+#### G. Gene Set Enrichment Analysis (GSEA) and Hallmarks of Cancer Analysis
+The clusterProfiler package was used to carry out the GSEA.
+
+```
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+BiocManager::install("clusterProfiler")
+```
+
+ The DEseq2 package was used to perform the differential expression of the data and to obtain the logFC as a measure of the effect, which is the measure used by clusterProfiler to perform the GSEA.
