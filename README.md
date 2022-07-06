@@ -1,7 +1,8 @@
 # IMvigor210_mUC
 This project will consist of carrying out an analysis of gene expression in tumor tissue from patients diagnosed with urothelial carcinoma, with the aim of identifying genes not only with prognostic impact, but also correlated with response to immunotherapy. Those final candidate genes will be validated as prognostic and/or predictive biomarkers in future studies. With the aim of analyzing the weight of each biomarker in the prognosis of the disease, various prognostic models will be optimized. On the other hand, cellular deconvolution methods will be apply to those groups of patients defined by our genes of interest in order to better characterize their tumor microenviroment. The same approach will be follow for GSEA.
 
-This repository contains all the scripts and data necessary to carry out this analysis.
+1. CONTENTS
+This repository contains all the scripts and data necessary to carry out this analysis:
 * 1_scripts
   + 1_functions
     + [categorized_cox.R](1_scripts/1_functions/categorized_cox.R): Categorize gene expression as "high" or "low" according to optimal cutoff point.
@@ -41,3 +42,12 @@ This repository contains all the scripts and data necessary to carry out this an
   + 7_deconvolution
   + 8_gsea
   + 9_multivariant
+
+2. HOW TO
+Two different versions of R are required to run the entire pipeline, due to incompatibility of the DEseq package with the most recent versions of the software. The required versions can be installed with the [RSwitch](https://rud.is/rswitch/) program. During the development of this project, R v3.3.3 and R v4.2.0 for in macOS Monterrey 12.3 were used.
+
+To download and install [IMvigor210 Core Biologies package v1.0.0](http://research-pub.gene.com/IMvigor210CoreBiologies/packageVersions/), R 3.3.3 version is required.
+
+```
+wget http://research-pub.gene.com/IMvigor210CoreBiologies/packageVersions/IMvigor210CoreBiologies_1.0.0.tar.gz
+```
