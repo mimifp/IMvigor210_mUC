@@ -1,5 +1,5 @@
 # IMvigor210_mUC
-This project will consist of carrying out an analysis of gene expression in tumor tissue from patients diagnosed with urothelial carcinoma, with the aim of identifying genes not only with prognostic impact, but also correlated with response to immunotherapy. Those final candidate genes will be validated as prognostic and/or predictive biomarkers in future studies. With the aim of analyzing the weight of each biomarker in the prognosis of the disease, a various prognostic models will be optimized. On the other hand, cellular deconvolution methods will be apply to those groups of patients defined by our genes of interest in order to better characterize their tumor microenviroment. The same approach will be follow for GSEA.
+This project will consist of carrying out an analysis of gene expression in tumor tissue from patients diagnosed with urothelial carcinoma, with the aim of identifying genes not only with prognostic impact, but also correlated with response to immunotherapy. Those final candidate genes will be validated as prognostic and/or predictive biomarkers in future studies. With the aim of analyzing the weight of each biomarker in the prognosis of the disease, various prognostic models will be optimized. On the other hand, cellular deconvolution methods will be apply to those groups of patients defined by our genes of interest in order to better characterize their tumor microenviroment. The same approach will be follow for GSEA.
 
 This repository contains all the scripts and data necessary to carry out this analysis.
 * 1_scripts
@@ -23,6 +23,9 @@ This repository contains all the scripts and data necessary to carry out this an
   + 1_IMvigor210
   + 2_TCGA_BLCA
   + 3_hallmark_geneset
+    + exp_mat.txt: expression matrix in [.txt format](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#TXT:_Text_file_format_for_expression_dataset_.28.2A.txt.29). First column must be gene name (Name), second an description (Description) and then one column per sample (Sample1, Sample2 ... SampleX)
+    + h.all.v7.5.1.symbols.gmt: gene set that summarize and represent specific well-defined biological states or processes and display coherent expression in [.gmt format](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GMT:_Gene_Matrix_Transposed_file_format_.28.2A.gmt.29).
+    + phenotype_x.cls: matrix in [.cls format](https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#CLS:_Categorical_.28e.g_tumor_vs_normal.29_class_file_format_.28.2A.cls.29) indicating the samples with high or low phenotype for each of the genes.
 * 3_results: data and plots resulting from different parts of analysis
   + 1_filtering
   + 2_survival_analysis
