@@ -46,7 +46,9 @@ This repository contains all the scripts and data necessary to carry out this an
 ### 2. HOW TO
 Two different versions of R are required to run the entire pipeline, due to incompatibility of the DEseq package with the most recent versions of the software. The required versions can be installed with the [RSwitch](https://rud.is/rswitch/) program. During the development of this project, R v3.3.3 and R v4.2.0 for in macOS Monterrey 12.3 were used.
 
-#### Download Imvigor210 Core Biologies data
+All datasets (IMvigor210 and TCGA-BLCA) have been anonymized because of the potential patentability of the results. The details of how the anonymization has been done are not included, but the pipeline would work the same with any similar data type.
+
+#### A. Download Imvigor210 Core Biologies data
 To download and install [IMvigor210 Core Biologies package v1.0.0](http://research-pub.gene.com/IMvigor210CoreBiologies/packageVersions/), R 3.3.3 version is required.
 
 ```
@@ -60,4 +62,12 @@ install.packages("IMvigor210CoreBiologies_1.0.0.tar.gz", repos=NULL)
 library(IMvigor210CoreBiologies)
 ```
 
-You can obtain matrix expression through `counts(cds)` object. Feature characterize data its saved in `fData` and phenotype (clinical) data its in `pData`. These three datasets are listed on the github as [exmat_censored_IMvigor210.csv](2_data/1_IMvigor210/exmat_censored_IMvigor210.csv) (expression matrix), [fData_IMvigor210.csv](2_data/1_IMvigor210/fData_IMvigor210.csv) (feature data) and [pData_IMvigor210.csv](2_data/1_IMvigor210/pData_IMvigor210.csv) (phenotype data)
+You can obtain matrix expression through `counts(cds)` object. Feature characterize data its saved in `fData` and phenotype (clinical) data its in `pData`. These three datasets are listed on the github as [exmat_censored_IMvigor210.csv](2_data/1_IMvigor210/exmat_censored_IMvigor210.csv) (expression matrix), [fData_IMvigor210.csv](2_data/1_IMvigor210/fData_IMvigor210.csv) (feature data) and [pData_IMvigor210.csv](2_data/1_IMvigor210/pData_IMvigor210.csv) (phenotype data). The code used is in the script [1_download_data.R](1_scripts/2_pipeline/1_download_data.R).
+
+#### B. Preprocess gene expression data
+Data quality analysis and normalization to TPMs is performed. In addition, three filters are applied on the data:
+* Remove genes with 0 values in at least 95% of samples
+* Drop genes with IQR <= 0.5 and include only genes with log(TPM+1) >= 2 in at least 10% of samples
+* Drop genes with s.d <= 1 and include only genes with log(TPM+1) >= 2 in at least 10% of samples
+
+The last two filters are influential. In our analysis we use the second one (SD), however, the code necessary to apply the other one (IQR) is attached. The necessary code is in the script [2_preprocess_data.R](1_scripts/2_pipeline/2_preprocess_data.R).
