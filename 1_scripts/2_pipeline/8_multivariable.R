@@ -1,4 +1,4 @@
-############# MULTIVARIANT ANALYSIS WITH DIFFERENTS MODELS #################
+############# MULTIVARIABLE ANALYSIS WITH DIFFERENTS MODELS #################
 
 # This workflow was performed in R 4.2.0
 
