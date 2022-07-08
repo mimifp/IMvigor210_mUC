@@ -6,6 +6,9 @@
 #install.packages("devtools")
 #devtools::install_github("GfellerLab/EPIC", build_vignettes=TRUE)
 
+# Change working directory
+setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
+
 # Load packages
 library(dplyr)
 library(tibble)
@@ -18,8 +21,8 @@ library(gridExtra)
 
 
 #### 1. DECONVOLUTION WITH EPIC 0.1 ####
-exmat <- read.csv("../../1_data/tpm_sd_log10_filter.csv") #need NO CENSORED data
-output_file <- "../../3_results/7_deconvolution/1_data/epic_results.csv"
+exmat <- read.csv("1_data/tpm_sd_log10_filter.csv") #need NO CENSORED data
+output_file <- "3_results/7_deconvolution/1_data/epic_results.csv"
 
 # Load expression matrix
 if (sum(duplicated(exmat[1])) > 0) {
@@ -46,9 +49,9 @@ epic_results <- epic_results %>% rownames_to_column(var = "cell_type")
 
 #### 2. PLOT DECONVOLUTION RESULTS ####
 # Load results
-epic <- read.csv("../../3_results/7_deconvolution/1_data/epic_results.csv")
-gene_list <- read.csv("../../3_results/1_filtering/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_iqr.csv")[,2]
-extab <- read.csv("../../3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv")
+epic <- read.csv("3_results/7_deconvolution/1_data/epic_results.csv")
+gene_list <- read.csv("3_results/1_filtering/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_iqr.csv")[,2]
+extab <- read.csv("3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv")
 
 extab <- extab %>% dplyr::select(sample_id, all_of(gene_list))
 
@@ -96,7 +99,7 @@ for (type in cell_types){
 
 #### 3. DISTRIBUTION STATISTICS ####
 # Wilcoxon Test
-sink(file = paste0("../../3_results/7_deconvolution/1_data/cens_MWUtest_output.txt"))
+sink(file = paste0("3_results/7_deconvolution/1_data/cens_MWUtest_output.txt"))
 for (type in cell_types){
   print(paste("ANALYZING", type, sep = " "))
   for (gene in gene_list){
@@ -110,7 +113,7 @@ sink(file = NULL)
 
 #### 4. SIGNIFICATIVE CELLTYPES PLOTS ####
 # Load MWUtest results table
-data <- read.csv("../../3_results/7_deconvolution/1_data/MWUtest_table.csv", sep = ";")
+data <- read.csv("3_results/7_deconvolution/1_data/MWUtest_table.csv", sep = ";")
 
 data <- dplyr::rename(data, gene_id = X)
 cell_types <- names(data[,-1])
@@ -150,9 +153,9 @@ for (type in cell_types){
 
 #### 5. CD8T CELLS MARKERS ####
 # Load data
-tpm <- read.csv("../../3_results/1_filtering/1_data/exmat_tpm.csv")
-sig_genes <- read.csv("../../3_results/1_filtering/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
-dicho_data <- read.csv("../../3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv")
+tpm <- read.csv("3_results/1_filtering/1_data/exmat_tpm.csv")
+sig_genes <- read.csv("3_results/1_filtering/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
+dicho_data <- read.csv("3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv")
 markers <- c("gene_4341", "gene_8056", "gene_9979", "gene_22450", "gene_28173")
 
 # Prepare data

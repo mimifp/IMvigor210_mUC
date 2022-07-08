@@ -20,11 +20,14 @@ library(clusterProfiler)
 library(AnnotationDbi)
 library(org.Hs.eg.db)
 
+# Change working directory
+setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
+
 # Load data 
-exmat <- read.csv("../../2_data/1_IMvigor210/exmat_IMvigor210.csv")
-pData <- read.csv("../../3_results/2_optimal_cutpoint/regression_data_coxdata_sd.csv")[,-c(2,3,4)] #need NO CENSORED data
-tpm <- read.csv("../../3_results/1_filtering/1_data/tpm_sd_log10_filter.csv") #need NO CENSORED data
-sig_genes <- read.csv("../../3_results/1_filtering/1_data/significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,"Variable"] #need NO CENSORED DATA
+exmat <- read.csv("2_data/1_IMvigor210/exmat_IMvigor210.csv")
+pData <- read.csv("3_results/2_optimal_cutpoint/regression_data_coxdata_sd.csv")[,-c(2,3,4)] #need NO CENSORED data
+tpm <- read.csv("3_results/1_filtering/1_data/tpm_sd_log10_filter.csv") #need NO CENSORED data
+sig_genes <- read.csv("3_results/1_filtering/1_data/significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,"Variable"] #need NO CENSORED DATA
 
 # Check rownames
 exmat <- exmat %>% remove_rownames %>% column_to_rownames(var="gene_id")
@@ -67,12 +70,12 @@ for (gene in sig_genes){
   hist(res$pvalue[res$baseMean>1],main=paste0(gene," Pval distribution"),xlab="P-values")
   # Save results
   df_res <- as.data.frame(res)
-  write.csv(df_res, paste0("../../3_results/8_gsea/1_data/dif_exp_analysis_",paste(gene),".csv"))
+  write.csv(df_res, paste0("3_results/8_gsea/1_data/dif_exp_analysis_",paste(gene),".csv"))
 }  
 
 ##### 3. GSEA ####
 for (gene in sig_genes){
-  df_res <- read.csv(paste0("../../3_results/8_gsea/1_data/dif_exp_analysis_",paste(gene),".csv"))
+  df_res <- read.csv(paste0("3_results/8_gsea/1_data/dif_exp_analysis_",paste(gene),".csv"))
   df_res <- df_res %>% remove_rownames %>% column_to_rownames(var="X")
   
   # Load our data
@@ -98,14 +101,14 @@ for (gene in sig_genes){
   
   # Save results
   gsea_res <- gsea_BH@result
-  write.csv(gsea_res, paste0("../../3_results/8_gsea/1_data/gsea_results_",paste(gene),".csv"))
+  write.csv(gsea_res, paste0("3_results/8_gsea/1_data/gsea_results_",paste(gene),".csv"))
 }
 
 
 #### 4. KEGG pathways ####
 for (gene in sig_genes){
   # Load data
-  df_res <- read.csv(paste0("../../3_results/8_gsea/1_data/dif_exp_analysis_",paste(gene),".csv"))
+  df_res <- read.csv(paste0("3_results/8_gsea/1_data/dif_exp_analysis_",paste(gene),".csv"))
   df_res <- df_res %>% remove_rownames %>% column_to_rownames(var="X")
   
   # Convert Symbol to EntrezID
@@ -131,18 +134,18 @@ for (gene in sig_genes){
   
   # Save results
   kegg_res <- gsea_kegg@result
-  write.csv(kegg_res, paste0("../../3_results/8_gsea/1_data/kegg_results_",paste(gene),".csv"))
+  write.csv(kegg_res, paste0("3_results/8_gsea/1_data/kegg_results_",paste(gene),".csv"))
 }
 
 # Set genes that have enrichment in KEGG pathways
-sig_genes <- c("ERCC4", "MLLT3")
+sig_genes <- c("gene_5834", "gene_20068") #Change by SYMBOL ID names
 
 #### 5. PLOTS ####
 for (gene in sig_genes){
   # Dotplot of top enriched functions 
   # Load data
-  gsea_BH <- read.csv(paste0("../../3_results/8_gsea/1_data/gsea_results_",paste(gene),".csv"))
-  gsea_KEGG <- read.csv(paste0("../../3_results/8_gsea/1_data/kegg_results_",paste(gene),".csv"))
+  gsea_BH <- read.csv(paste0("3_results/8_gsea/1_data/gsea_results_",paste(gene),".csv"))
+  gsea_KEGG <- read.csv(paste0("3_results/8_gsea/1_data/kegg_results_",paste(gene),".csv"))
   gsea_BH <- gsea_BH %>% remove_rownames %>% column_to_rownames(var="X")
   gsea_KEGG <- gsea_KEGG %>% remove_rownames %>% column_to_rownames(var="X")
   

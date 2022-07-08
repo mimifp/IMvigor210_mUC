@@ -2,12 +2,10 @@
 
 # This workflow was performed in R 4.2.0
 
-path <- ("../../2_data/2_TCGA_BLCA")
-mkdir(path)
-setwd(path)
+setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
 
 # Load functions
-source("../../1_scripts/1_functions/categorized_cox.R")
+source("1_scripts/1_functions/categorized_cox.R")
 
 # Load packages
 library(dplyr)
@@ -21,8 +19,8 @@ library(grid)
 library(gridExtra)
 
 # Load data
-extab <- read.csv("../../3_results/6_TCGA_BLCA/1_data/cens_fkpms_significative_genes_TCGA_BLCA.csv")[,-1]
-fData <- read.csv("../../3_results/6_TCGA_BLCA/1_data/filter_clinical_data_TCGA_BLCA.csv")[,-1]
+extab <- read.csv("3_results/6_TCGA_BLCA/1_data/cens_fkpms_significative_genes_TCGA_BLCA.csv")[,-1]
+fData <- read.csv("3_results/6_TCGA_BLCA/1_data/filter_clinical_data_TCGA_BLCA.csv")[,-1]
 gene_list <- colnames(extab[,4:ncol(extab)])
 
 #### 3. SURVIVAL ANALYSIS ####
@@ -56,7 +54,7 @@ levels(extab$stage) <- list(NR  = "not reported", I = "stage i",
 
 levels(extab$stage)
 
-#write.csv(extab, "../../3_results/6_TCGA_BLCA/1_data/cens_categorized_significative_genes_TCGA_BLCA.csv")
+#write.csv(extab, "3_results/6_TCGA_BLCA/1_data/cens_categorized_significative_genes_TCGA_BLCA.csv")
 
 # Cox Regression
 results <- RegParallel(
@@ -77,13 +75,13 @@ results <- results[!is.na(results$P),]
 res_filter <- results %>% filter(P <= 0.05)
 
 # Save results
-#write.csv(results, "../../3_results/6_TCGA_BLCA/1_data/cens_no_filter_significative_genes_TCGA_BLCA.csv")
-#write.csv(res_filter, "../../3_results/6_TCGA_BLCA/1_data/cens_filter_p005_significative_genes_TCGA_BLCA.csv")
+#write.csv(results, "3_results/6_TCGA_BLCA/1_data/cens_no_filter_significative_genes_TCGA_BLCA.csv")
+#write.csv(res_filter, "3_results/6_TCGA_BLCA/1_data/cens_filter_p005_significative_genes_TCGA_BLCA.csv")
 
 #### 4. PLOTTING ####
 # Load data 
-extab <- read.csv("../../3_results/6_TCGA_BLCA/1_data/cens_categorized_significative_genes_TCGA_BLCA.csv")[,-1]
-km_data <- read.csv("../../3_results/6_TCGA_BLCA/1_data/cens_filter_p005_significative_genes_TCGA_BLCA.csv")[,-1]
+extab <- read.csv("3_results/6_TCGA_BLCA/1_data/cens_categorized_significative_genes_TCGA_BLCA.csv")[,-1]
+km_data <- read.csv("3_results/6_TCGA_BLCA/1_data/cens_filter_p005_significative_genes_TCGA_BLCA.csv")[,-1]
 
 ## A. KM plots #probar con divisiones de 2 años
 genes <- km_data$Variable
@@ -141,7 +139,7 @@ results <- RegParallel(
 results <- results[!is.na(results$P),]
 res_filter <- results %>% filter(P <= 0.05)
 
-#write.csv(res_filter, "../../3_results/6_TCGA_BLCA/3_stageIV/cens_results_stage_IV.csv")
+#write.csv(res_filter, "3_results/6_TCGA_BLCA/3_stageIV/cens_results_stage_IV.csv")
 
 
 ## B. KM plots

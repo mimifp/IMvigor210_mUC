@@ -15,12 +15,12 @@ library(RColorBrewer)
 library(ggpubr)
 
 # Change working directory
-setwd("../../2_data/1_IMvigor210")
+setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
 
 # Load data
-exmat <- read.csv("exmat_censored_IMvigor210.csv") #31085 genes
-pData <- read.csv("pData_IMvigor210.csv")
-fData <- read.csv("fData_IMvigor210.csv")
+exmat <- read.csv("2_data/1_IMvigor210/exmat_censored_IMvigor210.csv") #31085 genes
+pData <- read.csv("2_data/1_IMvigor210/pData_IMvigor210.csv")
+fData <- read.csv("2_data/1_IMvigor210/fData_IMvigor210.csv")
 
 # Change rownames
 exmat <- exmat %>% column_to_rownames(var = "X")
@@ -75,7 +75,7 @@ table(duplicated(names(exmat)))
 flen <- as.numeric(fData[,4])
 tpm <- counts_to_tpm(exmat, flen)
 
-#write.csv(tpm, "../../3_results/1_filtering/1_data/exmat_tpm.csv")
+#write.csv(tpm, "3_results/1_filtering/1_data/exmat_tpm.csv")
 
 #### 3. FILTER DATA ####
 ## First of all we applied one filter in whole TPM matrix:
@@ -98,8 +98,8 @@ dim(tpm_iqr5)
 dim(tpm_iqr5_log10)
 
 # Save data
-#write.csv(tpm_iqr5, "../../3_results/1_filtering/1_data/tpm_iqr5_filter_cens.csv")
-#write.csv(tpm_iqr5_log10, "../../3_results/1_filtering/1_data/tpm_iqr5_log10_filter_cens.csv")
+#write.csv(tpm_iqr5, "3_results/1_filtering/1_data/tpm_iqr5_filter_cens.csv")
+#write.csv(tpm_iqr5_log10, "3_results/1_filtering/1_data/tpm_iqr5_log10_filter_cens.csv")
 
 ## Filter 2. S.D < 1 + log(TPM+1) > 2
 tpm_sd <- tpm[!apply(tpm, 1, sd, na.rm=TRUE) <= 1,] # 11398 genes
@@ -111,8 +111,8 @@ dim(tpm_sd)
 dim(tpm_sd_log10)
 
 # Save data
-#write.csv(tpm_sd, "../../3_results/1_filtering/1_data/tpm_sd_filter_cens.csv")
-#write.csv(tpm_sd_log10, "../../3_results/1_filtering/1_data/tpm_sd_log10_filter_cens.csv")
+#write.csv(tpm_sd, "3_results/1_filtering/1_data/tpm_sd_filter_cens.csv")
+#write.csv(tpm_sd_log10, "3_results/1_filtering/1_data/tpm_sd_log10_filter_cens.csv")
 
 #### 4. COMPARISION PLOTS ####
 # Compare raw data with TPM normalized data (ggplot2)

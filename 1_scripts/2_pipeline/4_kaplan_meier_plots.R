@@ -11,9 +11,12 @@ library(patchwork)
 library(svglite)
 library(gridExtra)
 
+# Change working directory
+setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
+
 # Set input/output paths
-input_file <- "../../3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv"
-gene_list <- read.csv("../../3_results/1_filtering/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
+input_file <- "3_results/2_survival_analysis/cens_regression_data_coxdata_sd.csv"
+gene_list <- read.csv("3_results/2_survival_analysis/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
 
 # Load survival data. 
 data <- read_csv(file.path(input_file))[,-4]

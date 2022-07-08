@@ -1,6 +1,8 @@
 ############ Metastasic urothelial cancer RNAseq EGAS00001002556 ############
 # This worfkflow was performed in R 3.3.3
 
+setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC/2_data/1_IMvigor210")
+
 #### 1.  PREPARE ENVIROMENT ####
 # Downloading urothelial samples package (in terminal)
 #download_path <- ("../../2_data/1_IMvigor210")
@@ -10,9 +12,6 @@
 # Load functions
 source("http://bioconductor.org/biocLite.R")
 source("../1_functions/remove_duplicated_genes.R")
-
-# Install next packages as binary in order to avoid having to compile them
-#install.packages(c("dplyr", "ggplot2", "lsmeans", "spatstat", "DT", "RSQLite", "circlize", "corrplot", "reshape2", "plyr"), type = "binary")
 
 install.packages("IMvigor210CoreBiologies_1.0.0.tar.gz", 
                  repos=NULL)
@@ -82,6 +81,7 @@ fData <- fData[-id_dup,]
 dim(exmat)
 
 # Save datasets
+# Change working directory
 write.csv(exmat, "exmat_IMvigor210.csv", row.names = FALSE)
 write.csv(fData, "fData_IMvigor210.csv", row.names = FALSE)
 write.csv(pData, "pData_IMvigor210.csv", row.names = FALSE)

@@ -14,12 +14,15 @@ library(ggRandomForests)
 library(gtable)
 library(grid)
 
+#Change working directory
+setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
+
 # Load functions
-source("../../1_scripts/1_functions/flattenCorrMatrix.R")
+source("1_scripts/1_functions/flattenCorrMatrix.R")
 
 # Load data
-df <- read.csv("../../3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv")
-genelist <- read.csv("../../3_results/1_filtering/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
+df <- read.csv("3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv")
+genelist <- read.csv("3_results/1_filtering/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
 
 #### 1. PREPARE DATA ####
 df <- df %>% dplyr::select(os, censOS, all_of(genelist))
@@ -45,7 +48,7 @@ corrplot(res, type="lower", method = "color", order="hclust", insig = "label_sig
          col = colorRampPalette(c("purple", "white", "orange"))(100),
          is.corr = TRUE, mar=c(1,0,1,0), p.mat =pval, sig.level = c(0.001, 0.01, 0.05), pch.cex = 0.9)
 
-#write.csv(corr_results, "../../3_results/9_ml/1_multivariant/1_data/cens_corr_mat_pearson.csv")
+#write.csv(corr_results, "3_results/9_ml/1_multivariant/1_data/cens_corr_mat_pearson.csv")
 
 #### 3. MULTIVARIANT ANALYSIS ####
 ## A. CROSS VALIDATION GLMNET ##

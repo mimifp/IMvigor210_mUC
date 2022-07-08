@@ -14,10 +14,13 @@ library(magrittr)
 library(RColorBrewer)
 library(ggpubr)
 
+# Change working directory
+setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
+
 # Load functions
-source("../1_functions/tpm_coxdata.R")
-source("../1_functions/cox_regression.R")
-source("../1_functions/categorized_cox.R")
+source("1_scripts/1_functions/tpm_coxdata.R")
+source("1_scripts/1_functions/cox_regression.R")
+source("1_scripts/1_functions/categorized_cox.R")
 
 #### 1. SURVIVAL ANALYSIS ####
 ## Preparing clincal data and Cox regression data
@@ -53,7 +56,7 @@ for (item in results) {
   assign(as.character(item), res, envir= .GlobalEnv)
   res <- res[!is.na(res$P),]
   res_fil <- res %>% filter(P.adjust <= 0.05) 
-  out_path <- paste0("../../3_results/2_optimal_cutpoint/cens_significative_genes_cox_optimalcut_bonferroni_",paste(item),".csv")
+  out_path <- paste0("3_results/2_survival_analysis/cens_significative_genes_cox_optimalcut_bonferroni_",paste(item),".csv")
   # Saving results
   write.csv(res_fil, out_path)
 }
@@ -73,7 +76,7 @@ for (df in dicho_dat){
   reg_data <- reg_data %>% relocate(c(sample_id, os, censOS, 'Best.Confirmed.Overall.Response'), .before = 1) %>% 
     dplyr::rename(response = 'Best.Confirmed.Overall.Response')
   #  # Write results
-  out_path <- paste0("../../3_results/2_optimal_cutpoint/cens_regression_data_",paste(df),".csv")
+  out_path <- paste0("3_results/2_survival_analysis/cens_regression_data_",paste(df),".csv")
   write.csv(reg_data, out_path, row.names = F)
 }
 
@@ -84,8 +87,8 @@ filters <- c("iqr", "sd")
 name <- "sd"
 
 for (name in filters){
-  data <- read.csv(paste0("../../3_results/2_optimal_cutpoint/cens_regression_data_coxdata_",paste0(name),".csv"))
-  sig_genes <- read.csv(paste0("../../3_results/2_optimal_cutpoint/cens_significative_genes_cox_optimalcut_bonferroni_res_",paste(name),".csv"))[-1]
+  data <- read.csv(paste0("3_results/2_survival_analysis/cens_regression_data_coxdata_",paste0(name),".csv"))
+  sig_genes <- read.csv(paste0("3_results/2_survival_analysis/cens_significative_genes_cox_optimalcut_bonferroni_res_",paste(name),".csv"))[-1]
   
   ## A. PREPARE DATA ##
   # Set response levels
@@ -137,7 +140,7 @@ for (name in filters){
   datalong$level %<>% fct_rev()
   
   ## B. DISTRIBUTION STATISTICS ##
-  sink(file = paste0("../../3_results/3_distribution_statistics/distribution_statistics_output_",paste(name),".txt"))
+  sink(file = paste0("3_results/3_distribution_statistics/distribution_statistics_output_",paste(name),".txt"))
   print(paste(name))
   for (gene in genes) {
     data_gene_dc <- datalong %>% 
