@@ -21,8 +21,8 @@ setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
 source("1_scripts/1_functions/flattenCorrMatrix.R")
 
 # Load data
-df <- read.csv("3_results/2_optimal_cutpoint/cens_regression_data_coxdata_sd.csv")
-genelist <- read.csv("3_results/1_filtering/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
+df <- read.csv("3_results/2_survival_analysis/cens_regression_data_coxdata_sd.csv")
+genelist <- read.csv("3_results/2_survival_analysis/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
 
 #### 1. PREPARE DATA ####
 df <- df %>% dplyr::select(os, censOS, all_of(genelist))

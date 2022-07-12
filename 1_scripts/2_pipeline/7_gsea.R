@@ -25,9 +25,9 @@ setwd("/Users/mimiferreiro/Documents/GitHub/tfm_mUC")
 
 # Load data 
 exmat <- read.csv("2_data/1_IMvigor210/exmat_IMvigor210.csv")
-pData <- read.csv("3_results/2_optimal_cutpoint/regression_data_coxdata_sd.csv")[,-c(2,3,4)] #need NO CENSORED data
+pData <- read.csv("3_results/2_survival_analysis/regression_data_coxdata_sd.csv")[,-c(2,3,4)] #need NO CENSORED data
 tpm <- read.csv("3_results/1_filtering/1_data/tpm_sd_log10_filter.csv") #need NO CENSORED data
-sig_genes <- read.csv("3_results/1_filtering/1_data/significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,"Variable"] #need NO CENSORED DATA
+sig_genes <- read.csv("3_results/2_survival_analysis/significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,"Variable"] #need NO CENSORED DATA
 
 # Check rownames
 exmat <- exmat %>% remove_rownames %>% column_to_rownames(var="gene_id")

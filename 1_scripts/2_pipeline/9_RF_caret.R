@@ -14,8 +14,8 @@ library(doParallel)
 library(plotROC)
 
 # Load data
-df <- read.csv("/Users/mimiferreiro/Desktop/Lab/2_urothelial/4_results/2_optimal_cutpoint/censored/cens_regression_data_coxdata_sd.csv")
-sig_genes <- read.csv("/Users/mimiferreiro/Desktop/Lab/2_urothelial/4_results/1_filtering/1_data/censored/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,-1]
+df <- read.csv("3_results/2_survival_analysis/cens_regression_data_coxdata_sd.csv")
+sig_genes <- read.csv("3_results/2_survival_analysis/1_data/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,-1]
 
 #### 1. PREPARE DATA ####
 # Transform response variable to DC and NR
