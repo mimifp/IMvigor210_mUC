@@ -20,6 +20,7 @@ This repository contains all the scripts and data necessary to carry out this an
     + [6_deconvolution.R](1_scripts/2_pipeline/6_deconvolution.R): deconvolution with [EPIC](https://github.com/GfellerLab/EPIC) and analysis of CD-T cells exhaustion markers.
     + [7_gsea.R](1_scripts/2_pipeline/7_gsea.R): Gen Set Enrichment Anlaysis (GSEA) with [clusterProfiler](https://github.com/YuLab-SMU/clusterProfiler).
     + [8_multivariant.R](1_scripts/2_pipeline/8_multivariant.R): multivariant analysis with differents models.
+    + [9_RF_caret.R](1_scripts/2_pipeline/9_RF_caret.R): Random Forest model developed with caret R package.
 * 2_data: necessary data to run analysis with each dataset.
   + 1_IMvigor210
     + [exmat_censored_IMvigor210.csv](2_data/1_IMvigor210/exmat_censored_IMvigor210.csv): expression matrix
@@ -131,5 +132,8 @@ BiocManager::install("clusterProfiler")
 
  The analysis of cancer hallmarks was performed using the [GSEA v4.2.3](http://www.gsea-msigdb.org/gsea/login.jsp) application. Three main files are required: [exp_mat.txt](2_data/3_hallmark_geneset/exp_mat.txt), [h.all.v7.5.1.symbols.gmt](2_data/3_hallmark_geneset/h.all.v7.5.1.symbols.gmt) and matrix in *.cls* format indicating the samples with high or low phenotype for each of the genes. A *.cls* file is needed for each gene of interest.
 
- #### H. Multivariant Analysis
+#### H. Multivariant Analysis
 In order to obtain a prognostic model of survival with the smallest possible number of genes, several multivariate models were constructed. First, three models were optimized for the Cox PH method (forward, backward and stepwise). Second, a Cox CV model with 10 folds was optimized. Finally, we applied Random Survival Forest (RFS) model. Details of the execution can be found in the script [8_multivariant.R](1_scripts/2_pipeline/8_multivariant.R). The function [flattenCorrMatrix.R](1_scripts/1_functions/flattenCorrMatrix.R) is necessary to calculate matrix of Pearson Correlation.
+
+#### I. Random Forest
+To develop a model capable of predicting patient response to treatment according to gene expression of the 15 genes of interest, an attempt was made to build a Random Forest model with the R caret package. It failed to correct for overfitting. The details of the run are in the script [9_RF_caret.R](1_scripts/2_pipeline/9_RF_caret.R).
