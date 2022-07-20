@@ -23,9 +23,11 @@ source("1_scripts/1_functions/flattenCorrMatrix.R")
 # Load data
 df <- read.csv("3_results/2_survival_analysis/cens_regression_data_coxdata_sd.csv")
 genelist <- read.csv("3_results/2_survival_analysis/cens_significative_genes_cox_optimalcut_bonferroni_res_sd.csv")[,2]
+exp <- read.csv("3_results/2_survival_analysis/tpm_sd_log10_filter_cens.csv")
 
 #### 1. PREPARE DATA ####
 df <- df %>% dplyr::select(os, censOS, all_of(genelist))
+exp <-  exp %>% dplyr::select(os, censOS, all_of(genelist))
 
 # Relevel factors
 df <- as.data.frame(unclass(df),stringsAsFactors=TRUE)
@@ -34,9 +36,15 @@ df[genelist] <- lapply(df[genelist],relevel,ref="low")
 x <- df[,3:length(df)]
 x <- model.matrix( ~ ., x)
 
+# Prepare matrix to calculate correlations
+rownames(exp) <- exp$X
+exp$X <-  NULL
+exp <- exp[genelist,]
+exp <- model.matrix( ~ ., as.data.frame(t(exp)))
+
 #### 2. CORRELATION ANALYSIS ####
 # A. Calculate correlation matrix by Pearson method
-corr_pearson <- rcorr(x, type = c("pearson"))
+corr_pearson <- rcorr(exp, type = c("pearson"))
 res <- corr_pearson$r[-1,-1] #results
 pval <- corr_pearson$P[-1,-1] #p-values
 corr_results <- flattenCorrMatrix(corr_pearson$r, corr_pearson$P)
