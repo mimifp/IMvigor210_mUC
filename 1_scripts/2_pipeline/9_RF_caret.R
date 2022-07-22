@@ -74,6 +74,14 @@ test_dcr <- df[-index_dcr,]
 train_nodcr <- train_dcr[,-1]
 test_nodcr <- test_dcr[,-1]
 
+# Split data (R)
+index_res <- caret::createDataPartition(df$response, p=0.8, list = F)
+train_res <- df[index_res,]
+test_res <- df[-index_res,]
+
+train_nores <- train_res[,-1]
+test_nores <- test_res[,-1]
+
 #### 3. TRAINING RANDOM FOREST MODEL ####
 # Paralellize process
 cl <- makePSOCKcluster(3)
@@ -104,8 +112,7 @@ train.control <- trainControl(method = "repeatedcv", number = cv.k,
 
 # Train Random Forest Model
 set.seed(5678)
-rf.model <- train(x = train_nodcr[,genelist],
-                  y = train_dcr$dc,
+rf.model <- train(x = train_nores[,genelist],
                   method = "ranger",
                   tuneGrid = hyperparameters,
                   metric = "ROC",
@@ -138,7 +145,7 @@ plot(importance.rf, main = 'Gene importance in RF model')
 # Select a parameter setting
 selectedIndices <- rf.model$pred$mtry == 6 & rf.model$pred$min.node.size == 1
 
-g <- ggplot(rf.model$pred[selectedIndices, ], aes(m=NDC, d=factor(obs, levels = c("NDC", "DC")))) + 
+g <- ggplot(rf.model$pred[selectedIndices, ], aes(m=NR, d=factor(obs, levels = c("NR", "R")))) + 
   geom_roc(n.cuts=0) + 
   coord_equal() +
   style_roc()
@@ -147,20 +154,20 @@ g + annotate("text", x=0.75, y=0.25, label=paste("AUC =", round((calc_auc(g))$AU
 
 #### 5. PREDICTION ####
 # Training metrics and ROC
-train_pred <- predict(rf.model, newdata=train_nodcr[,genelist], type = "prob")
-train_metrics <- evalm(data.frame(train_pred, train_dcr$dc, Group = "RF (train)"))
+train_pred <- predict(rf.model, newdata=train_nores[,genelist], type = "prob")
+train_metrics <- evalm(data.frame(train_pred, train_res$response, Group = "RF (train)"))
 train_metrics
 
 # Test metrics and ROC
-test_pred <- predict(rf.model, newdata=test_nodcr[,genelist], type = "prob")
-test_metrics <- evalm(data.frame(test_pred, test_dcr$dc, Group = "RF (test)"))
+test_pred <- predict(rf.model, newdata=test_nores[,genelist], type = "prob")
+test_metrics <- evalm(data.frame(test_pred, test_res$response, Group = "RF (test)"))
 test_metrics
 
 # Calculate test/train accuracies
 results <- list(RF=rf.model)
 prediction <- extractPrediction(results, 
-                                testX = test_nodcr[,genelist], 
-                                testY = test_dcr$dc)
+                                testX = test_nores[,genelist], 
+                                testY = test_res$response)
 pred_test <- prediction %>% filter(dataType == "Test")
 pred_train <- prediction %>% filter(dataType == "Training")
 
@@ -175,11 +182,11 @@ reps <- 1
 
 # Train Random Forest Model
 set.seed(5678)
-rf.model <- train(x = train_nodcr,
-                  y = train_dcr$dc,
+rf.model <- train(x = train_nores,
+                  y = train_res$response,
                   method = "ranger",
                   tuneGrid = hyperparameters,
-                  metric = "Accuracy",
+                  metric = "ROC",
                   importance= 'impurity',
                   trControl = train.control,
                   num.trees = 1000)
@@ -188,20 +195,20 @@ rf.model
 rf.model$finalModel
 
 # Training metrics and ROC
-train_pred <- predict(rf.model, newdata=train_nodcr, type = "prob")
-train_metrics <- evalm(data.frame(train_pred, train_dcr$dc, Group = "RF (train)"))
+train_pred <- predict(rf.model, newdata=train_nores, type = "prob")
+train_metrics <- evalm(data.frame(train_pred, train_res$response, Group = "RF (train)"))
 train_metrics
 
 # Test metrics and ROC
-test_pred <- predict(rf.model, newdata=test_nodcr, type = "prob")
-test_metrics <- evalm(data.frame(test_pred, test_dcr$dc, Group = "RF (test)"))
+test_pred <- predict(rf.model, newdata=test_nores, type = "prob")
+test_metrics <- evalm(data.frame(test_pred, test_res$response, Group = "RF (test)"))
 test_metrics
 
 # Calculate test/train accuracies
 results <- list(RF=rf.model)
 prediction <- extractPrediction(results, 
-                                testX = test_nodcr, 
-                                testY = test_dcr$dc)
+                                testX = test_nores, 
+                                testY = test_res$response)
 pred_test <- prediction %>% filter(dataType == "Test")
 pred_train <- prediction %>% filter(dataType == "Training")
 
