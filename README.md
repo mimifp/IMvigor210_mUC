@@ -1,4 +1,4 @@
-# Master thesis project mUC
+# Master thesis project (MUBICS)
 This repository corresponds to the development of the master thesis project for the Master in Bioinformatics for Health Sciences (MUBICS) at the University of A Coruña (UDC). The project is based on carrying out an analysis of gene expression in tumor tissue from patients diagnosed with urothelial carcinoma, with the aim of identifying genes not only with prognostic impact, but also correlated with response to immunotherapy. Those final candidate genes will be validated as prognostic and/or predictive biomarkers in future studies. With the aim of analyzing the weight of each biomarker in the prognosis of the disease, various prognostic models will be optimized. On the other hand, cellular deconvolution methods will be apply to those groups of patients defined by our genes of interest in order to better characterize their tumor microenviroment. The same approach will be follow for GSEA.
 
 ### 1. CONTENTS
