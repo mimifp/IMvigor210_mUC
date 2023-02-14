@@ -19,7 +19,7 @@ This repository contains all the scripts and data necessary to carry out this an
     + [5_TCGA_BLCA_analysis.R](1_scripts/2_pipeline/5_TCGA_BLCA_analysis.R): survival analysis by Cox PH regression and plot Kaplan-Meier curves for TCGA_BLCA data.
     + [6_deconvolution.R](1_scripts/2_pipeline/6_deconvolution.R): deconvolution with [EPIC](https://github.com/GfellerLab/EPIC) and analysis of CD-T cells exhaustion markers.
     + [7_gsea.R](1_scripts/2_pipeline/7_gsea.R): Gen Set Enrichment Anlaysis (GSEA) with [clusterProfiler](https://github.com/YuLab-SMU/clusterProfiler).
-    + [8_multivariant.R](1_scripts/2_pipeline/8_multivariant.R): multivariant analysis with differents models.
+    + [8_multivariable.R](1_scripts/2_pipeline/8_multivariable.R): multivariant analysis with differents models.
     + [9_RF_caret.R](1_scripts/2_pipeline/9_RF_caret.R): Random Forest model developed with caret R package.
 * 2_data: necessary data to run analysis with each dataset.
   + 1_IMvigor210
